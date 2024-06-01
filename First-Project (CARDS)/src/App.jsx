@@ -1,11 +1,15 @@
 import React from "react";
 import Card from "./Components/Card";
+import States from "./Components/States";
 
 function App (){
   return (
-    <div>
-      <Card />
-    </div>
+    <>
+      {/* <Card /> */}
+
+      <States />
+
+    </>
   )
 }
 

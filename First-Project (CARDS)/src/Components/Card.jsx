@@ -7,7 +7,7 @@ function Card() {
         "https://images.unsplash.com/photo-1716847214569-631cb7f1751c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Amazon Basics",
       description:
-        "ODE resourcesappout vswork benchapi node extension HostProcess .js:153:9 9850)",
+        "Use h-dvh to make an element span the entire height of the viewport, which changes as the browser UI expands or contracts.",
       inStock: true,
     },
     {
@@ -36,7 +36,7 @@ function Card() {
   return (
     <div className="bg-zinc-100 py-2 px-2 w-full h-screen flex gap-10 justify-center items-center">
       {info.map((elem, index) => (
-        <div className="card w-56 h-72 rounded-lg overflow-hidden bg-slate-200">
+        <div className="card w-56 rounded-lg overflow-hidden bg-slate-200">
           <div className="image w-full h-32">
             <img
               className="w-full h-full object-cover"
@@ -51,7 +51,7 @@ function Card() {
             <p className="text-xs h-12">{elem.description}</p>
           </div>
           <div className="py-2 px-2">
-            <button onClick={elem.inStock ? AddToCart : ''} className={`py-2 px-3 ${elem.inStock ? 'bg-green-400' : 'bg-red-400'} text-xs font-semibold rounded`}>
+            <button onClick={elem.inStock ? AddToCart : ''} className={`py-2 px-3 ${elem.inStock ? 'bg-green-400' : 'bg-red-400'} my-2 text-xs font-semibold rounded`}>
               {elem.inStock ? 'In Stock' : 'Out of Stock'}
             </button>
           </div>

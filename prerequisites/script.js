@@ -10,8 +10,8 @@
 
     // Destructuring means create a convenient way to to access most accessing items
     let info = {
-        name : 'Hamza', age : 20, email = 'hamzamalikaj22@gmail.com'
-    };
+        name : 'Hamza', age : 20, email : 'hamzamalikaj22@gmail.com'
+    }
 
     console.log(info.email); // everytime i write this if i want email, instead
 
