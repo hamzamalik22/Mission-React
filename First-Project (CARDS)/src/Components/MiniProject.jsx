@@ -1,25 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import MiniProjectCard from "./MiniProjectCard";
+import Navbar from "./Navbar";
 
 function MiniProject() {
   const music = [
-    { name: "", artist: "", favourite: false },
-    { name: "", artist: "", favourite: false },
-    { name: "", artist: "", favourite: false },
-    { name: "", artist: "", favourite: false },
-    { name: "", artist: "", favourite: false },
-    { name: "", artist: "", favourite: false },
+    { name: "Baloo Batiyan", artist: "Ali Zafar", favourite: false },
+    { name: "Bado Badi", artist: "Chahat Fateh Ali Khan", favourite: false },
+    { name: "Sang e Mah", artist: "Atif Aslam", favourite: false },
+    { name: "Cheque", artist: "Shubh", favourite: false },
+    { name: "295", artist: "Sidhu Moosewala", favourite: false },
+    { name: "Alone 2.0", artist: "Alan Walker", favourite: false },
   ];
+
+
+  const [data, setData] = useState(music);
+
+  const HandleFavourite = (outerIndex) => {
+    setData((prev)=>{
+      return prev.map((item, index)=>{
+        if(index === outerIndex) return {...item, favourite : !item.favourite};
+        return item;
+      })
+    })
+  }
+
 
   return (
     <main className="bg-zinc-100">
-        <div className="navbar w-full px-10 flex justify-between items-center h-16">
-            <h1 className="text-orange-600 font-bold">Orange</h1>
-            <h2 className="px-2 py-1 rounded-lg text-xs text-white bg-orange-600">Favourites <span>3</span> </h2>
-        </div>
-      <div className="w-full h-screen px-4 py-6 flex gap-6 flex-wrap">
-        {music.map((item) => (
-          <MiniProjectCard />
+
+     <Navbar data={data} />
+
+      <div className="w-full h-fit px-4 py-6 flex gap-6 flex-wrap">
+        {data.map((item, index) => (
+          <MiniProjectCard key={index}  HandleFavourite={HandleFavourite} index={index} values={item}  />
         ))}
       </div>
     </main>

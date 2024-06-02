@@ -69,7 +69,7 @@ function App() {
       </div> */}
 
 
-            <MiniProject />
+          <MiniProject />
 
 
 
