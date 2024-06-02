@@ -5,6 +5,7 @@ import Slider from "./Components/Slider";
 import PropsPractice from "./Components/PropsPractice";
 import PropsAdvanced from "./Components/PropsAdvanced";
 import MiniProject from "./Components/MiniProject";
+import FormProject from "./Components/FormProject";
 
 function App() {
 
@@ -69,7 +70,10 @@ function App() {
       </div> */}
 
 
-          <MiniProject />
+      {/* <MiniProject /> */}
+
+
+      <FormProject />
 
 
 
