@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pt-10">
         <div>
           <a
             href="#"
