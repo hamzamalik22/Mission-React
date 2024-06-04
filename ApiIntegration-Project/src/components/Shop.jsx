@@ -1,22 +1,30 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import axios from '../utils/Axios'
 
 function Shop() {
   const [products, setProduct] = useState([]);
 
   const getProducts = () => {
-    console.log("Products Added");
-
-    let api = "https://fakestoreapi.com/products";
 
     axios
-      .get(api)
+      .get('/products')
       .then((products) => {
         console.log(products);
         setProduct(products.data);
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(()=>{
+    getProducts()
+    
+    return ()=>{
+      console.log('Deleted...')
+    }
+
+
+  },[]);
+
 
   return (
     <>
@@ -35,7 +43,7 @@ function Shop() {
             <h1 className="text-4xl font-bold pb-5">Products</h1>
 
             {products.map((item) => (
-              <li key={item.id} className="pl-6 py-2 bg-orange-200 mb-2">{item.id}. {item.title}</li>
+              <li key={item.id} className="pl-6 px-2 py-2 bg-orange-200 mb-2">{item.id}. {item.title}</li>
             ))}
 
           </ul>
