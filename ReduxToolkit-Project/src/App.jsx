@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div className="bg-black w-full h-screen text-white ">
-        <Counter />
+        <Counwter />
       </div>
     </>
   );
